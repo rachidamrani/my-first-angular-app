@@ -1,0 +1,7 @@
+.success {
+    color: green;
+    font-weight: 700;
+    font-size: 1.5em;
+    display: inline;
+    margin-right: 12px;
+}
