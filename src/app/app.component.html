@@ -1,14 +1,49 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-xs-12">
-      <h3>Hello Angular !</h3>
-      <hr />
-      <app-success></app-success>
-      <div app-warning></div>
-      <info-component></info-component>
+      <!-- <app-success></app-success>
+        <div app-warning></div>
+        <info-component></info-component> -->
       <!-- <app-servers></app-servers> -->
       <!-- <div app-servers></div> -->
       <!-- <div class="app-servers"></div> -->
+      <hr />
+
+      <label>Server name : </label>
+      <!-- <input
+        type="text"
+        class="form-control"
+        (input)="onUpdateServerName($event)"
+      /> -->
+      <input type="text" class="form-control" [(ngModel)]="serverName" />
+      <button
+        class="btn btn-primary mt-3 mb-3"
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()"
+      >
+        Add new server
+      </button>
+      <!-- <p [innerText]="allowNewServer"></p> -->
+      <p>{{ serverCreationStatus }}</p>
+      <app-server></app-server>
+
+      <hr />
+
+      <input
+        type="text"
+        placeholder="username"
+        [(ngModel)]="username"
+        class="form-control"
+      />
+      <h2>Entered username : {{ username }}</h2>
+
+      <button
+        [disabled]="!username"
+        class="btn btn-success"
+        (click)="resetUserName()"
+      >
+        Reset username
+      </button>
     </div>
   </div>
 </div>
