@@ -15,7 +15,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
-  serverName = 'initial server name';
+  serverName = '';
+  serverCreated = false;
 
   username = '';
 
@@ -26,6 +27,7 @@ export class AppComponent {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
     this.serverCreationStatus =
       'Server was created! Name is ' + this.serverName + '.';
   }
