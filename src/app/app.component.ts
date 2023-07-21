@@ -18,6 +18,8 @@ export class AppComponent {
   serverName: string = '';
   serverCreated: boolean = false;
 
+  servers = ['Test server', 'Test server 2'];
+
   username = '';
 
   constructor() {
@@ -28,6 +30,7 @@ export class AppComponent {
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus =
       'Server was created! Name is ' + this.serverName + '.';
   }
