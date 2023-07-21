@@ -22,12 +22,15 @@
         Add new server
       </button>
       <!-- <p [innerText]="allowNewServer"></p> -->
-      <!-- <app-server></app-server> -->
       <p *ngIf="serverCreated; else noserver">
         Server was created, server name is {{ serverName }}.
       </p>
 
       <ng-template #noserver> <p>No Server was created.</p></ng-template>
+      <hr />
+
+      <app-server></app-server>
+      <app-server></app-server>
 
       <!--
       <input

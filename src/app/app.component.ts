@@ -13,10 +13,10 @@ import { Component } from '@angular/core';
   // ],
 })
 export class AppComponent {
-  allowNewServer = false;
-  serverCreationStatus = 'No server was created!';
-  serverName = '';
-  serverCreated = false;
+  allowNewServer: boolean = false;
+  serverCreationStatus: string = 'No server was created!';
+  serverName: string = '';
+  serverCreated: boolean = false;
 
   username = '';
 

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html',
   styles: [
     `
-      h3 {
+      p {
         font-weight: '600';
         border: 1px solid darkblue;
         padding: 12px;
@@ -13,10 +13,8 @@ import { Component } from '@angular/core';
         text-align: center;
         margin: 0 auto;
         font-size: 2em;
-      }
-
-      em {
-        color: red;
+        color: white;
+        margin-bottom: 3px;
       }
     `,
   ],
@@ -25,7 +23,15 @@ export class ServerComponent {
   serverId: number = 10;
   serverStatus: string = 'offline';
 
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
+  }
+
   getServerStatus(): string {
     return this.serverStatus;
+  }
+
+  getColor() {
+    return this.serverStatus === 'Online' ? 'green' : 'red';
   }
 }

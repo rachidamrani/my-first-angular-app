@@ -1,5 +1,5 @@
-<h3>
-  {{ true ? "Server" : "___" }} with ID
+<p [ngStyle]="{ backgroundColor: getColor() }">
+  {{ true ? "Server" : "___" }} with ID : {{ serverId }}
   <strong>{{ getServerStatus() }}</strong> is
   <em>{{ serverStatus }}</em>
-</h3>
+</p>
