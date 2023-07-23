@@ -14,12 +14,12 @@
         harum?
       </p>
 
-      <div *ngFor="let click of clicks; let index = index">
+      <div *ngFor="let click of clicks">
         <p
-          [ngStyle]="{ backgroundColor: index >= 4 ? 'steelblue' : null }"
-          [ngClass]="{ greaterThanFive: index >= 4 }"
+          [ngStyle]="{ backgroundColor: click >= 4 ? 'steelblue' : null }"
+          [ngClass]="{ greaterThanFive: click >= 4 }"
         >
-          Click {{ index + 1 }}
+          {{ click }}
         </p>
       </div>
     </div>
