@@ -18,8 +18,8 @@ export class AppComponent {
   paragraphIsVisible = false;
   clicks = [];
 
-  toggleParagraphVisibility(event: any) {
+  toggleParagraphVisibility() {
     this.paragraphIsVisible = !this.paragraphIsVisible;
-    this.clicks.push(parseInt(event.timeStamp));
+    this.clicks.push(this.clicks.length + 1);
   }
 }
