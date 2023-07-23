@@ -16,8 +16,8 @@
 
       <div *ngFor="let click of clicks">
         <p
-          [ngStyle]="{ backgroundColor: click >= 4 ? 'steelblue' : null }"
-          [ngClass]="{ greaterThanFive: click >= 4 }"
+          [ngStyle]="{ backgroundColor: getBackgroundColor(click) }"
+          [ngClass]="{ greaterThanFive: click >= 5 }"
         >
           {{ click }}
         </p>

@@ -22,4 +22,8 @@ export class AppComponent {
     this.paragraphIsVisible = !this.paragraphIsVisible;
     this.clicks.push(this.clicks.length + 1);
   }
+
+  getBackgroundColor(item) {
+    return item >= 5 ? 'steelblue' : 'white';
+  }
 }
