@@ -3,43 +3,23 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  // styles: [
-  //   `
-  //     h3 {
-  //       color: darkorange;
-  //     }
-  //   `,
-  // ],
+  //styleUrls: ['./app.component.css'],
+  styles: [
+    `
+      .greaterThanFive {
+        color: white;
+        font-weight: white;
+        padding: 3px;
+      }
+    `,
+  ],
 })
 export class AppComponent {
-  allowNewServer: boolean = false;
-  serverCreationStatus: string = 'No server was created!';
-  serverName: string = '';
-  serverCreated: boolean = false;
+  paragraphIsVisible = false;
+  clicks = [];
 
-  servers = ['Test server', 'Test server 2'];
-
-  username = '';
-
-  constructor() {
-    setTimeout(() => {
-      this.allowNewServer = true;
-    }, 2000);
-  }
-
-  onCreateServer() {
-    this.serverCreated = true;
-    this.servers.push(this.serverName);
-    this.serverCreationStatus =
-      'Server was created! Name is ' + this.serverName + '.';
-  }
-
-  onUpdateServerName(event: any) {
-    this.serverName = (<HTMLInputElement>event.target).value;
-  }
-
-  resetUserName() {
-    this.username = '';
+  toggleParagraphVisibility(event: any) {
+    this.paragraphIsVisible = !this.paragraphIsVisible;
+    this.clicks.push(parseInt(event.timeStamp));
   }
 }
